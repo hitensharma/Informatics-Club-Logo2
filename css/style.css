@@ -1,0 +1,269 @@
+body {
+  background: #282828;
+}
+
+#global {
+  width: 70px;
+  margin: auto;
+  margin-top: 150px;
+  position: relative;
+  cursor: pointer;
+  height: 60px;
+}
+
+.m-mid {
+  position: relative;
+}
+
+.mask {
+  position: absolute;
+  border-radius: 2px;
+  overflow: hidden;
+  perspective: 1000;
+  backface-visibility: hidden;
+}
+
+.plane {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  perspective: 1000;
+  backface-visibility: hidden;
+}
+
+#left-post {
+  width: 10px;
+  height: 20px;
+  top: 50px;
+  right: 43px;
+  transform: rotate(90deg);
+}
+
+#left-diag {
+  width: 10px;
+  height: 20px;
+  transform: rotate(90deg) skew(0deg, 0);
+  top: 4px;
+  right: 35px;
+}
+
+#mid-left {
+  width: 10px;
+  height: 42px;
+  transform: rotate(90deg) skew(0deg, 0);
+  left: 58px;
+  top:-10px;
+}
+
+#mid-middle {
+  width: 10px;
+  height: 55px;
+  left:36px;
+  top: 7px;
+  transform: rotate(0deg) skew(-10deg, 0);
+}
+
+#mid-right {
+  width: 10px;
+  height: 30px;
+  transform: rotate(90deg) skew(0deg, 0);
+  left: 46px;
+  top:42px;
+}
+/*
+#right-post {
+  width: 14px;
+  height: 61px;
+  top: -3px;
+  right: 8px;
+  transform: rotate(180deg);
+}
+
+#right-diag {
+  width: 14px;
+  height: 26px;
+  transform: rotate(53deg) skew(22deg, 0);
+  top: 1px;
+  right: 18px;
+}
+*/
+p {
+  color: #fff;
+  position: absolute;
+  left: -6px;
+  top: -17px;
+	font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  animation: spin 4.7s linear 0.8s;
+}
+/*
+#loader {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  width: 170px;
+  height: 10px;
+  border:10px solid red;
+  margin: 0;
+  right: -24px;
+  bottom: -5px;
+  border-radius: 90%;
+  border: 3px solid red;
+  border-color: #fff;
+  animation: spin 4.7s linear infinite 1.8s;
+}*/
+.bigger_box{
+  opacity: 1;
+  width:300px;
+  height:70px;
+  right: -74px;
+  bottom: -20px;
+  border-radius: .1em;
+  border-color: #fff;/*
+  animation: spin 4.7s linear infinite 1.8s;*/
+  border-style:solid;
+  border-width:3px;
+}
+
+.box_1{
+  opacity: 1;
+  width:90px;
+  height:70px;
+  right: -74px;
+  bottom: -6px;
+  border-radius: .1em;
+  border-color: #fff;/*
+  animation: spin 4.7s linear infinite 1.8s;*/
+  border-right-style:solid;
+  border-width:3px;
+  background:linear-gradient(to bottom left, #0066ff 0%, #66ccff 100%);/*
+  background:linear-gradient(to bottom left, #3399ff 0%, #00ff99 100%);*/
+}
+
+
+.box_2{
+  opacity: 1;
+  position:absolute;
+  width:208px;
+  height:70px;
+  right: -233px;
+  bottom: -13px;
+  border-radius: .1em;
+  border-color: #fff;/*
+  animation: spin 4.7s linear infinite 1.8s;*/
+  background:linear-gradient(to bottom left, #0066ff 0%, #66ccff 100%);/*
+  background:linear-gradient(to bottom left, #3399ff 0%, #00ff99 100%);*/
+}
+
+.animation {
+  transition: all 0.3s ease;
+}
+
+/*--middle--*/
+#mid-left .plane {
+  z-index: 2000;
+  animation: mid-left .5s ease  .4s backwards;
+}
+
+#mid-middle .plane {
+  animation: mid-center .5s ease-in  0s forwards;
+}
+
+#mid-right .plane {
+  z-index: 2000;
+  animation: mid-right .5s ease  .4s backwards;
+}
+
+/*--left side--*/
+#left-post .plane {
+  z-index: 2000;
+  animation: left-post .5s ease  1s backwards;
+}
+
+#left-diag .plane {
+  animation: left-angle .5s ease  1s  backwards;
+}
+
+/*--right side--*/
+#right-post .plane {
+  z-index: 2000;
+  animation: right-post .5s ease  .8s backwards;
+}
+
+#right-diag .plane {
+  animation: right-angle .5s ease .5s  backwards;
+}
+
+/*--end animations--*/
+@keyframes spin {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes mid-left {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes mid-center {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes mid-right {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+/*left side*/
+@keyframes left-post {
+  from {
+    transform: translate(0, 70px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes left-angle {
+  from {
+    transform: translate(0, 40px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+/*right side*/
+@keyframes right-post {
+  from {
+    transform: translate(0, 70px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes right-angle {
+  from {
+    transform: translate(0, 40px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
