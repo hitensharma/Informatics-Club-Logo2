@@ -1,0 +1,223 @@
+body{
+  background:#282828;
+}
+
+#global{
+  width:70px;
+  margin:auto;
+  margin-top:150px;
+  position:relative;
+  cursor:pointer;
+  height:60px;
+}
+.m-left {
+  
+}
+.m-mid {
+  position: relative;
+}
+.m-right {
+  
+}
+.mask{
+  position:absolute;
+  border-radius:2px;
+  overflow:hidden;
+   perspective: 1000;
+  backface-visibility: hidden;
+}
+
+.plane{
+  background:#fff;
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:100;
+  perspective: 1000;
+  backface-visibility: hidden;
+}
+ 
+#left-post {
+  width: 14px;
+  height: 61px;
+  top: -3px;
+  right: 105px;
+  transform: rotate(180deg);
+}
+#left-diag {
+width: 14px;
+    height: 26px;
+    transform: rotate(-56deg) skew(-22deg, 0);
+    top: 1px;
+    right: 94px;
+}
+#mid-left{
+    width: 14px;
+    height: 42px;
+    transform: rotate(237deg) skew(22deg, 0);
+    left: -16px;
+}
+ 
+#mid-middle{
+  width:14px;
+  height:55px;
+  top: -3px;
+}
+#mid-right{
+    width: 14px;
+    height: 42px;
+    transform: rotate(121deg) skew(-24deg, 0);
+    left: 16px; 
+}
+#right-post {
+    width: 14px;
+    height: 61px;
+    top: -3px;
+    right: 8px;
+    transform: rotate(180deg);
+}
+#right-diag {
+    width: 14px;
+    height: 26px;
+    transform: rotate(53deg) skew(22deg, 0);
+    top: 1px;
+    right: 18px;
+}
+p {
+  color:#fff;
+  position:absolute;
+  left: -3px;
+  top:45px;
+  font-family:Arial;
+  text-align:center;
+  font-size:10px;
+}
+
+#loader {
+  opacity: 0;
+    display: block;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    margin: 0;
+    right: -24px;
+    bottom: -55px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-color: #fff;
+    animation: spin 4.7s linear infinite 1.8s;
+}
+
+.animation{
+  transition: all 0.3s ease;
+}
+/*--middle--*/
+#mid-left .plane{
+  z-index:2000;
+  animation : mid-left .5s ease  .4s backwards;
+}
+#mid-middle .plane{
+  animation : mid-center .5s ease-in  0s forwards;
+}
+#mid-right .plane{
+  z-index:2000;
+  animation : mid-right .5s ease  .4s backwards;
+}
+/*--left side--*/
+#left-post .plane{
+  z-index:2000;
+  animation : left-post .5s ease  .8s backwards;
+}
+#left-diag .plane{
+  animation : left-angle .5s ease  .5s  backwards;
+}
+/*--right side--*/
+#right-post .plane{
+  z-index:2000;
+  animation : right-post .5s ease  .8s backwards;
+}
+#right-diag .plane{
+  animation : right-angle .5s ease .5s  backwards;
+}
+/*--end animations--*/
+
+
+
+@keyframes spin {
+  0% {
+    opacity: 0;
+   // transform: rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+   // transform: rotate(360deg);
+  }
+}
+ 
+@keyframes mid-left{ 
+  from { 
+    transform : translate(0,50px)
+  }
+  to { 
+    transform : translate(0,0)
+  }
+}
+
+@keyframes mid-center{ 
+  from { 
+    transform : translate(0,60px)
+  }
+  to { 
+    transform : translate(0,0)
+  }
+}
+
+@keyframes mid-right{ 
+  from { 
+    transform : translate(0,50px)
+  }
+  to { 
+    transform : translate(0,0)
+  }
+}
+/*left side*/
+@keyframes left-post{ 
+  from { 
+    transform : translate(0,70px)
+  }
+  to { 
+    transform : translate(0,0)
+  }
+}
+
+@keyframes left-angle{ 
+  from { 
+    transform : translate(0,40px)
+  }
+  to { 
+    transform : translate(0,0)
+  }
+}
+/*right side*/
+@keyframes right-post{ 
+  from { 
+    transform : translate(0,70px)
+  }
+  to {
+    transform : translate(0,0)
+  }
+}
+
+@keyframes right-angle{ 
+  from { 
+    transform : translate(0,40px)
+  }
+  to { 
+    transform : translate(0,0)
+  }
+}
+
+
